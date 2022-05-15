@@ -23,11 +23,18 @@ public class App {
            List<Item> items = persona.getItems();
            System.out.println(items);*/
 
-           Item item = session.get(Item.class,5);
+          /* Item item = session.get(Item.class,5);
            System.out.println(item);
 
            Persona persona = item.getOwner();
-           System.out.println(persona);
+           System.out.println(persona);*/
+         Persona persona = session.get(Persona.class,2);
+         Item newItem = new Item ("Item from Hibernate",persona);
+
+         persona.getItems().add(newItem);
+
+         session.save(newItem);
+
 
             session.getTransaction().commit();
        }finally {

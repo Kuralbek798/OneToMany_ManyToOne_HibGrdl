@@ -1,7 +1,5 @@
 package model;
 
-import org.hibernate.annotations.CollectionId;
-
 import javax.persistence.Entity;
 import javax.persistence.*;
 
@@ -23,8 +21,9 @@ public class Item {
     public Item() {
     }
 
-    public Item(String itemName) {
+    public Item(String itemName, Persona owner) {
         this.itemName = itemName;
+        this.owner = owner;
     }
 
     public int getId() {
